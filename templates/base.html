@@ -2,7 +2,6 @@
 
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
-
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -48,17 +47,14 @@
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="{% url 'home' %}">Home</a>
                     </li>
-
-                    <!-- Add a link to About Template -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == about_url %}active{%endif%}" aria-current="page" 
-                        href="{% url 'about' %}" >About</a >
+                        <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'about' %}">About</a>
                     </li>
-
-                    <!-- Add Authentication -->
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" 
+                        href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -66,11 +62,10 @@
                             href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" 
+                        href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-
- 
                 </ul>
                 <span class="navbar-text text-muted">
                     adventures of a software developer
@@ -87,7 +82,6 @@
         <p class="text-end m-3">You are not logged in</p>
         {% endif %}
 
-
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
@@ -97,10 +91,8 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">
-            {% block copyright %}
-            Made by Code Instituters
-            {% endblock copyright %}
-        </p>
+      {% block copyright %}Made by Code Instituters{% endblock copyright %}
+</p>
         <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
@@ -111,7 +103,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
-
         <script src="{% static 'js/script.js' %}"></script>
 </body>
 
